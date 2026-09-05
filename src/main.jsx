@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react'
 import {createRoot} from 'react-dom/client'
 import './styles.css'
+if ('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('/HCD/sw.js'))
 
 const PARTS=[['text','テキスト','T'],['heading','見出し','H'],['idea','アイデア','✦'],['problem','問題','!'],['solution','解決策','✓'],['goal','目標','◎'],['feature','機能','◆'],['person','人物','●'],['note','メモ','≡'],['image','画像','▧'],['url','URL','↗'],['group','グループ','□'],['arrow','矢印','→'],['separator','区切り','—']]
 const initial=[{id:'welcome',type:'heading',x:120,y:90,w:300,h:90,content:'HCDへようこそ'}, {id:'idea',type:'idea',x:470,y:230,w:260,h:150,content:'ここにアイデアを置く'}]
